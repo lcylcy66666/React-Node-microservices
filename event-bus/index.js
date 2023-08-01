@@ -17,8 +17,12 @@ app.post("/events", (req, res) => {
   axios.post("http://localhost:4002/events", event).catch((err) => {
     console.log(err.message);
   });
+  //   moderation services
+  axios.post("http://localhost:4003/events", event).catch((err) => {
+    console.log(err.message);
+  });
   res.send({ status: "OK" });
-});
+}); 
 
 app.listen(4005, () => {
   console.log("Listening on 4005");
